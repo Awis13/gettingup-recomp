@@ -1,0 +1,18 @@
+# Lifter manifest: msvcr71.dll (MSVC 7.1 DLL CRT, shipped with the game,
+# SHA-256 8094af5ee310714caebccaeee7769ffb08048503ba478b879edfef5f1a24fefe). Its non-local exits:
+
+# SEH: _except_handler3 *calls* the __except block (after the global and
+# local unwinds), which starts with `mov esp, [ebp-18h]` and never returns.
+resume 7C3424B4
+
+# longjmp: after unwinding the SEH chain it restores ebx/edi/esi/esp from
+# the jmp_buf and ends in `jmp [edx+14h]` (the setjmp return address).
+resume 7C3436BB
+
+# C++ EH: _JumpToContinuation (7C359AF3) unlinks the frame's registration
+# node, restores esp from [node-4] and ebp, and jumps to the code after the
+# catch block. The nested-catch path (7C359D73) does the same from its own
+# saved esp/ebp.
+name   7C359AF3 _JumpToContinuation
+resume 7C359B1C
+resume 7C359D73

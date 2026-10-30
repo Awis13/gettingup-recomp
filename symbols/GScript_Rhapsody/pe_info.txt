@@ -1,0 +1,26 @@
+image_base 0x10000000  image_size 0x26f000  entry 0x101b6296  timestamp 0x43dad61a
+relocations: yes
+sections:
+  .text    va 0x10001000 vsize  0x1b9281 raw  0x1ba000 chars 0x60000020
+  .rdata   va 0x101bb000 vsize   0x38dc6 raw   0x39000 chars 0x40000040
+  .data    va 0x101f4000 vsize   0x454c8 raw    0x1000 chars 0xc0000040
+  .rsrc    va 0x1023a000 vsize      0x10 raw    0x1000 chars 0x40000040
+  .reloc   va 0x1023b000 vsize   0x336e4 raw   0x34000 chars 0x42000040
+imports per dll:
+  GCore.dll      317
+  g_Rhapsody.sgl 234
+  MSVCR71.dll    42
+  WINMM.dll      1
+  KERNEL32.dll   13
+exports: 7 func=6 vftable=1
+rich header (prodid build count):
+  105  2067 5
+   15  3077 3
+   95  3077 10
+   93  3077 7
+   93  2179 4
+    1     0 607
+   96  3077 50
+   92  3077 1
+   94  3052 1
+   90  3077 1

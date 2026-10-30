@@ -1,0 +1,6 @@
+# Lifter manifest: g_Rhapsody. No overrides yet.
+
+# Widescreen (src/widescreen.cpp). hook <va> <end> at the preferred base;
+# the hook functions are named by the mapped VA (+0x600000).
+hook 100E7245 100E724B   # fsub [screen offset]: security camera marker
+hook 100E725A 100E7260   # fsub [screen offset]

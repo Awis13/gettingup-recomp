@@ -1,0 +1,6 @@
+va	kind	mangled	demangled
+004074B0	func	??0TArchive@@QAE@XZ	public: __thiscall TArchive::TArchive(void)
+004074D0	func	??1TArchive@@UAE@XZ	public: virtual __thiscall TArchive::~TArchive(void)
+004074E0	func	??0TArchive@@QAE@ABU0@@Z	public: __thiscall TArchive::TArchive(struct TArchive const &)
+00407510	func	??4TArchive@@QAEAAU0@ABU0@@Z	public: struct TArchive & __thiscall TArchive::operator=(struct TArchive const &)
+005492E0	vftable	??_7TArchive@@6B@	const TArchive::`vftable'

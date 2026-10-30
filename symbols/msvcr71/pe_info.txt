@@ -1,0 +1,20 @@
+image_base 0x7c340000  image_size 0x56000  entry 0x7c34229f  timestamp 0x3e561eac
+relocations: yes
+sections:
+  .text    va 0x7c341000 vsize   0x38ba8 raw   0x39000 chars 0x60000020
+  .rdata   va 0x7c37a000 vsize   0x10040 raw   0x11000 chars 0x40000040
+  .data    va 0x7c38b000 vsize    0x6820 raw    0x6000 chars 0xc0000040
+  .rsrc    va 0x7c392000 vsize     0x3b8 raw    0x1000 chars 0x40000040
+  .reloc   va 0x7c393000 vsize    0x2b64 raw    0x3000 chars 0x42000040
+imports per dll:
+  KERNEL32.dll   154
+exports: 837 data=43 func=790 vftable=4
+rich header (prodid build count):
+   25  9210 3
+    1     0 155
+   96  3052 23
+   15  3052 77
+   95  3052 527
+   92  3052 1
+   94  3052 1
+   90  3052 1

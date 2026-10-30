@@ -1,0 +1,18 @@
+# Derived from the user's game files: never committed. (symbols/ is: the
+# functions' addresses and names, which the lifter needs.)
+generated/
+ghidra/
+out/
+*.gpr
+*.rep/
+# Local machine settings.
+config.local.json
+.DS_Store
+run/
+# x86recomp (vendor/x86recomp, its `gettingup` branch; see X86RECOMP) and
+# reference checkouts: separate repositories.
+vendor/
+*.log
+# Machine paths (iOS SDK, dependency prefixes).
+CMakeUserPresets.json
+tools/local.env

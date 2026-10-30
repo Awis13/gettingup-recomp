@@ -1,0 +1,8 @@
+va	kind	mangled	demangled
+101A0500	func	InterfaceDestroy_G_Script	
+101A4510	func	InterfaceCreate_G_Script	
+101A63F0	func	??0TArchive@@QAE@XZ	public: __thiscall TArchive::TArchive(void)
+101A6410	func	??1TArchive@@UAE@XZ	public: virtual __thiscall TArchive::~TArchive(void)
+101A6420	func	??0TArchive@@QAE@ABU0@@Z	public: __thiscall TArchive::TArchive(struct TArchive const &)
+101A6450	func	??4TArchive@@QAEAAU0@ABU0@@Z	public: struct TArchive & __thiscall TArchive::operator=(struct TArchive const &)
+101E6AF8	vftable	??_7TArchive@@6B@	const TArchive::`vftable'

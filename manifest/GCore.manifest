@@ -1,0 +1,16 @@
+# Lifter manifest: GCore. No overrides yet.
+
+# Widescreen (src/widescreen.cpp). hook <va> <end>: hook_<VA>(c) runs in
+# place of the instructions [va, end).
+hook 1005846E 10058477   # TGORender::ChangeResolution mode table
+hook 102BCBBA 102BCBDA   # IGuiManager::PostRender scale
+hook 102BCB30 102BCB35   # call TGORender::QueryResolution
+hook 102CBE67 102CBE6F   # GUI XML item parse
+
+# Polish (src/polish.cpp).
+replace 10049720 ProfilerOverlay          # not drawn unless GU_PROFILER=1
+hook 101463F4 101463FA                    # ILetterBox::Activate: no bars on wide screens
+replace 1004E7C0 TGORender_DebugText          # not drawn unless GU_DEBUGTEXT=1
+replace 10054D10 TGORender_DebugTextVirtual
+hook 102EF956 102EF95C                    # settings: notext on (GU_DEBUGTEXT=1: off)
+hook 1002D07D 1002D082                    # frame limiter: sleep, not spin

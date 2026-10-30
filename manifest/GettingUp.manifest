@@ -1,0 +1,32 @@
+# Lifter manifest: GettingUp.exe (Steam build 6613048,
+# SHA-256 55e9e2cf87b862b044f9f1f6d36a2fdd27d28aff5efafd079d1ea5e566dfca81).
+# Line based, guest VAs in hex (see x86recomp tools/lifter/main.cpp):
+#   entry <va> [name] | name <va> <name> | probe <va> [name]
+#   resume <va> | setjmp <va> [name] | replace <va> [name] | hook <va> <end>
+
+# setjmp/longjmp come from the DLL CRT (msvcr71.dll). The EXE calls them
+# through its import thunks, `jmp [__imp__setjmp3]` at 0053D0CA: the return
+# address of each direct call to the thunk is a longjmp target.
+setjmp 0053D0CA _setjmp3
+name   0053D0C4 longjmp
+
+# Widescreen (src/widescreen.cpp, a port of ThirteenAG's GettingUp.WidescreenFix).
+# hook <va> <end>: hook_<VA>(c) runs in place of the instructions [va, end).
+hook 004B8F44 004B8F4A   # SetWindowPos size
+hook 004B8F61 004B8F66   # mov [A8F0C8], eax
+hook 004B8F6F 004B8F75   # mov [A8F0CC], ecx
+hook 004B9055 004B905A   # mov [A8F0C8], eax (mode list)
+hook 004B9067 004B906C   # mov [A8F0CC], eax (mode list)
+hook 004B82E8 004B82EE   # mov [A8F0C0], edx
+hook 004B82EE 004B82F4   # mov [A8F0C4], edi
+hook 004F2625 004F262B   # mov [A8F0C0], ecx
+hook 004F2641 004F2647   # mov [A8F0C0], ecx
+hook 004F2659 004F265E   # mov [A8F0C4], eax
+hook 004B7E41 004B7E4E   # device creation size
+hook 0045C3DA 0045C3E0   # Bink movie quad
+hook 004EB285 004EB28C   # EndScene: pillarboxes
+replace 004B6940 SetQuadVertex
+replace 004B8EC0 TGORender_InitWindowMode   # window mode redone only in menus
+
+hook 00402445 0040244F   # warnings not handed to the screen list (GU_DEBUGTEXT=1: they are)
+hook 0044E5A6 0044E5AC   # settings: notext on (GU_DEBUGTEXT=1: off)
